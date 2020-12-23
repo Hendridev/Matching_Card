@@ -26,8 +26,9 @@ function resetAll() {
 function checkme(me) {
     right.reduce((a, b) => {
         if (a == b) {
-            alert("hi loser");
+            alert("use your brain my fellow");
             me.classList.remove('complete');
+            count.textContent--;
             point -= 1;
         }
     })
@@ -53,7 +54,7 @@ function correct(el) {
 }
 
 function congrats() {
-    if (point == 4) {
+    if (point == 6) {
         setTimeout(() => {
             alert(`You win, click count: ${count.textContent}`);
             resetAll();
