@@ -39,6 +39,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .card {
@@ -78,9 +79,10 @@ header {
     }
     .game-canvas {
         width: 90%;
+        height: 420px;
     }
     .card {
         width: 80px;
-        height: 100px;
+        height: 90px;
     }
 }
