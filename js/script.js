@@ -67,7 +67,7 @@ let togcount = 0;
 card.forEach((me) => {
     me.addEventListener('click', () => {
         // check double click
-        me.classList.toggle('hide');
+        me.classList.toggle('hide')
         countplus();
         arr.push(me.textContent);
         right.push(me);
@@ -75,15 +75,15 @@ card.forEach((me) => {
         checkme(me);
         congrats();
         togcount++;
-        while (togcount >= 2) {
+        while (togcount == 2) {
             setTimeout(() => {
                 reset();
-                arr = [];
-                right = [];
-            }, 400);
+            }, 200);
+            arr = [];
+            right = [];
             togcount = 0;
-            right.splice(0, 2);
         }
+        console.log(togcount);
     })
 
 });
