@@ -69,5 +69,18 @@ header {
 }
 
 .card:active {
-    transition: 1s;
+    /* transition: 1s; */
+}
+
+@media screen and (max-width:677px) {
+    .container {
+        padding: 0px;
+    }
+    .game-canvas {
+        width: 90%;
+    }
+    .card {
+        width: 80px;
+        height: 100px;
+    }
 }

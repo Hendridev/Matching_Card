@@ -80,7 +80,7 @@ card.forEach((me) => {
                 reset();
                 arr = [];
                 right = [];
-            }, 200);
+            }, 400);
             togcount = 0;
             right.splice(0, 2);
         }
