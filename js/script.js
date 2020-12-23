@@ -23,6 +23,23 @@ function resetAll() {
     }
 }
 
+function checkme(me) {
+    right.reduce((a, b) => {
+        if (a == b) {
+            alert("hi loser");
+            me.classList.remove('complete');
+            point -= 1;
+        }
+    })
+}
+
+function shuffle() {
+    card.forEach((me) => {
+        let orderit = Math.floor(Math.random() * 12);
+        me.style.order = orderit;
+    })
+};
+shuffle();
 
 function correct(el) {
     arr.sort((a, b) => {
@@ -40,6 +57,7 @@ function congrats() {
         setTimeout(() => {
             alert(`You win, click count: ${count.textContent}`);
             resetAll();
+            shuffle();
         }, 200);
     }
 }
@@ -47,21 +65,24 @@ function congrats() {
 let togcount = 0;
 card.forEach((me) => {
     me.addEventListener('click', () => {
+        // check double click
         me.classList.toggle('hide');
         countplus();
         arr.push(me.textContent);
         right.push(me);
         correct(me);
+        checkme(me);
         congrats();
         togcount++;
-        while (togcount == 2) {
+        while (togcount >= 2) {
             setTimeout(() => {
                 reset();
                 arr = [];
                 right = [];
             }, 200);
             togcount = 0;
+            right.splice(0, 2);
         }
-        console.log(point);
     })
+
 });
