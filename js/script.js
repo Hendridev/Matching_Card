@@ -1,5 +1,6 @@
 const count = document.querySelector('.click-count h2 span');
 const card = document.querySelectorAll('.card');
+const winning = document.querySelector('.dispwrap');
 
 let arr = [];
 let right = [];
@@ -56,9 +57,13 @@ function correct(el) {
 function congrats() {
     if (point == 6) {
         setTimeout(() => {
-            alert(`You win, click count: ${count.textContent}`);
-            resetAll();
-            shuffle();
+            winning.parentElement.style.display = "flex";
+            winning.firstElementChild.lastElementChild.textContent = " " + count.textContent + " clicks";
+            winning.lastElementChild.addEventListener('click', () => {
+                resetAll();
+                shuffle();
+                winning.parentElement.style.display = "none";
+            })
         }, 200);
     }
 }
@@ -83,7 +88,5 @@ card.forEach((me) => {
             right = [];
             togcount = 0;
         }
-        console.log(togcount);
     })
-
 });

@@ -8,6 +8,10 @@
     padding: 20px;
 }
 
+body {
+    background-color: rgb(228, 228, 228);
+}
+
 header {
     height: 40px;
     display: flex;
@@ -31,7 +35,7 @@ header {
 }
 
 .game-canvas {
-    border: 2px solid;
+    border: 2px solid rgb(44, 163, 172);
     height: 400px;
     width: 540px;
     margin: 0 auto;
@@ -45,22 +49,21 @@ header {
 .card {
     height: 120px;
     width: 120px;
-    border: 1px solid;
     margin: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: teal;
     color: teal;
-    border: 1px solid black;
     font-size: 0;
     transition: .3s;
 }
 
 .hide {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     color: black;
     font-size: 20px;
+    color: tomato;
 }
 
 .complete {
@@ -71,6 +74,36 @@ header {
 
 .card:active {
     /* transition: 1s; */
+}
+
+.winning {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    left: 0;
+    bottom: 10px;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.winning button {
+    margin: 10px;
+    outline: none;
+    padding: 4px;
+    font-weight: 500;
+    border: 1px solid;
+    border-bottom: 5px solid;
+}
+
+.winning button:active {
+    transform: translateY(5px);
+    border-bottom: none;
 }
 
 @media screen and (max-width:677px) {
